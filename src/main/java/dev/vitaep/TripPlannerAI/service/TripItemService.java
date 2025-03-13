@@ -30,7 +30,7 @@ public class TripItemService {
 
     // GET SERVICES
 
-    public List<TripItemDTO> listTrip(TripItemDTO tripItemDTO){
+    public List<TripItemDTO> listTrip(){
         List<TripItemModel> tripItemModelList = tripItemRepository.findAll();
         return tripItemModelList.stream().map(tripItemMapper::map)
                 .collect(Collectors.toList());
