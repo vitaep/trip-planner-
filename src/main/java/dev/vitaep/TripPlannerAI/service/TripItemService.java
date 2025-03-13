@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PutMapping;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -34,6 +35,12 @@ public class TripItemService {
         return tripItemModelList.stream().map(tripItemMapper::map)
                 .collect(Collectors.toList());
 
+    }
+
+    public TripItemDTO listTripById(Long id){
+        Optional<TripItemModel> tripItemModel = tripItemRepository.findById(id);
+
+        return tripItemModel.map(tripItemMapper::map).orElse(null);
     }
 
     // PUT SERVICES
