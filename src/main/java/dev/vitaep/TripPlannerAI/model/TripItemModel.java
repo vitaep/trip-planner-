@@ -15,5 +15,21 @@ import lombok.Setter;
 @Setter
 public class TripItemModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "destination")
+    private String destination;
+
+    @Column(name = "preference")
+    private String preference;
+
+    @Column(name = "spending_fund")
+    private int spendingFund;
+
+    @Column(name = "goals")
+    private String goals;
 
 }
