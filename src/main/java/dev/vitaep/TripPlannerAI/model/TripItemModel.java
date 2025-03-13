@@ -23,11 +23,14 @@ public class TripItemModel {
     @Column(name = "destination")
     private String destination;
 
+    @Column(name = "trip_days")
+    private Integer tripDays;
+
     @Column(name = "preference")
     private String preference;
 
     @Column(name = "spending_fund")
-    private int spendingFund;
+    private Integer spendingFund;
 
     @Column(name = "goals")
     private String goals;
